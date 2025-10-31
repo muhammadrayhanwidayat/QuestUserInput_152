@@ -3,10 +3,14 @@ package com.example.project02
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.material3.Button
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Divider
+import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
@@ -119,12 +123,10 @@ fun FormDataDiri(modifier: Modifier) {
                 .width(300.dp)
         ) {
             Column(modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp),) {
-                Text(text = "Nama    : "+nama, color = Color.White)
-                Text(text = "Gender  : "+jenis, color = Color.White)
-                Text(text = "Alamat  : "+alamat, color = Color.White)
+                Text(text = "Nama    : " + nama, color = Color.White)
+                Text(text = "Gender  : " + jenis, color = Color.White)
+                Text(text = "Alamat  : " + alamat, color = Color.White)
             }
-
-
-
+        }
     }
 }
