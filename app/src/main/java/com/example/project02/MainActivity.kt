@@ -18,4 +18,5 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     FormDataDiri(modifier = Modifier)
+                }
 
