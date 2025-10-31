@@ -20,4 +20,5 @@ class MainActivity : ComponentActivity() {
                     FormDataDiri(modifier = Modifier)
                 }
             }
+        }
 
