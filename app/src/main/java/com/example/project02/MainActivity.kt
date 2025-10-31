@@ -3,45 +3,41 @@ package com.example.project02
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.project02.ui.theme.project02Theme
+import androidx.compose.ui.graphics.Color
+import androidx.core.view.WindowCompat
+import com.example.project02.ui.theme.Project02Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+        // Membuat layout bisa tembus ke status bar
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
+        // Mengubah status bar menjadi hitam dengan ikon putih
+        window.statusBarColor = android.graphics.Color.BLACK
+        WindowCompat.getInsetsController(window, window.decorView)
+            ?.isAppearanceLightStatusBars = false
+
         setContent {
-            project02Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+            Project02Theme {
+                Scaffold(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color.Black) // latar belakang full hitam
+                ) { innerPadding ->
+                    Profile( // panggil fungsi Profile dari Profile.kt
+                        modifier = Modifier
+                            .padding(innerPadding)
+                            .background(Color.Black)
                     )
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    project02Theme {
-        Greeting("Android")
     }
 }
